@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '18'
       # run – произвольная bash-команда
-      # ls -la выведет содержимое текущего репозитория
+      # ls -la выведет содержимое текущего репозитори
       - run: make setup
       - run: make lint
       - name: Install dependencies
