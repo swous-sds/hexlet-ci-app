@@ -12,8 +12,17 @@ jobs:
       # экшен — выполняет какую-то задачу
       # checkout — клонирует репозиторий
       - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
       # run – произвольная bash-команда
       # ls -la выведет содержимое текущего репозитория
       - run: make setup
-      - run: make test
       - run: make lint
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Hello from Hexlet
+        uses: hexlet-components/hello-from-hexlet-action@v1
